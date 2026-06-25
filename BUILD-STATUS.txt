@@ -1,0 +1,59 @@
+locomotiveinsurance.com — BUILD STATUS
+=======================================
+
+NICHE: Insurance for tourist/heritage & short-line railroad operators (excursion railroads,
+       railroad museums, dinner trains, short-line freight, locomotive restoration shops).
+       Framed around the railroad operator business.
+BRAND: Locomotive Insurance (division of Contractors Choice Agency)
+
+BUILD
+-----
+Command: flock -w 3600 /tmp/.webtop-build.lock bash -c "pnpm install (+verify next) && next build"
+Build exit code: 0 (Next.js 15.5.19, "Compiled successfully", NEXT_RC=0 / FLOCK_RC=0)
+.next/BUILD_ID present: TRUE
+Static pages generated: 24
+Build config: pnpm-lock.yaml only, NO packageManager field, NO package-lock.json (left as inherited).
+Built atomically (install+verify+build) under the shared build-lock to beat the pnpm store race.
+
+ROUTES
+------
+Core: / , /about , /services , /blog , /contact , /quote , /privacy , /terms ,
+      /robots.txt , /sitemap.xml , /_not-found
+Services (7):
+  /services/general-liability-insurance
+  /services/railroad-liability-insurance
+  /services/passenger-liability-insurance
+  /services/rolling-stock-equipment-insurance
+  /services/commercial-property-insurance
+  /services/pollution-liability-insurance
+  /services/workers-compensation-insurance
+Blog (4):
+  /blog/heritage-railroad-insurance-guide              (~1054 words)
+  /blog/railroad-liability-fela-explained              (~1027 words)
+  /blog/passenger-liability-excursion-dinner-trains    (~971 words)
+  /blog/rolling-stock-locomotive-restoration-coverage  (~983 words)
+
+IMAGES (9 real FLUX images, all > 10KB, public/images/)
+------
+hero-locomotive.jpg (213K), heritage-train.jpg (279K), dinner-train.jpg (224K),
+railroad-museum.jpg (318K), restoration-shop.jpg (326K), railyard.jpg (199K),
+about-agent.jpg (153K), blog-default.jpg (217K), og-image.jpg (234K). Old framing images removed.
+
+FORMS (Netlify Forms — markers preserved, NO direct-webhook fetch)
+-----
+contact: name="contact", data-netlify="true", hidden form-name, bot-field honeypot — OK
+quote:   name="quote",   data-netlify="true", hidden form-name, bot-field honeypot — OK
+         quote page rewritten for the niche AND switched from the template's direct
+         WEBHOOK_URL fetch to the Netlify fetch("/") urlencoded pattern.
+netlify.toml notifications updated to site=locomotiveinsurance.com
+No site=framinginsurance.com remains anywhere (src/ public/ netlify.toml verified).
+
+CONTACT (canonical): 844-967-5247 / josh@contractorschoiceagency.com / 12220 E Riggs Rd, Chandler AZ 85249
+
+TESTIMONIALS: removed entirely (array + homepage section + component file deleted).
+
+SEO: sitemap.ts, robots.ts → https://locomotiveinsurance.com ; public/llms.txt rewritten for niche
+     (heritage/short-line railroad, FELA, passenger, rolling stock, pollution).
+
+FRAMING SCRUB: grep -rin 'fram' src/ public/ → ZERO ("frame" caught in a blog draft → fixed;
+              only JS requestAnimationFrame in SmoothScroll.tsx remains).
