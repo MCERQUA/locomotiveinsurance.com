@@ -48,7 +48,7 @@ quote:   name="quote",   data-netlify="true", hidden form-name, bot-field honeyp
 netlify.toml notifications updated to site=locomotiveinsurance.com
 No site=framinginsurance.com remains anywhere (src/ public/ netlify.toml verified).
 
-CONTACT (canonical): 844-967-5247 / josh@contractorschoiceagency.com / 12220 E Riggs Rd, Chandler AZ 85249
+CONTACT (canonical): 844-967-5247 / josh@contractorschoiceagency.com / 12220 E Riggs Rd, Suite #104, Chandler AZ 85249
 
 TESTIMONIALS: removed entirely (array + homepage section + component file deleted).
 
